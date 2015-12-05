@@ -117,9 +117,6 @@
     <ClInclude Include="Rendering\tdogl\Texture.h" />
     <ClInclude Include="Rendering\VertexFormat.h" />
   </ItemGroup>
-  <ItemGroup>
-    <Image Include="Textures\tileable_grass_00.png" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="..\packages\glm.0.9.6.3\build\native\glm.targets" Condition="Exists('..\packages\glm.0.9.6.3\build\native\glm.targets')" />
