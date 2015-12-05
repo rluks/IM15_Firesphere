@@ -30,8 +30,6 @@ namespace Rendering
 			virtual const std::vector<GLuint>& GetVbos() const override;
 
 			static tdogl::Bitmap ballTexture;
-			static tdogl::Bitmap batTexture;
-			static tdogl::Bitmap brickTexture;
 			static tdogl::Bitmap grassTexture;
 
 			static glm::vec3 getNorm(const glm::vec3 &, const glm::vec3 &, const glm::vec3 &);
