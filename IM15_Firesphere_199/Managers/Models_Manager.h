@@ -7,8 +7,6 @@
 #include "../Rendering/IGameObject.h"
 #include "../Rendering/Models/Sphere.h"
 #include "../Rendering/Models/Circle.h"
-#include "../Rendering/Models/BrickCollider.h"
-#include "../Rendering/Models/Line.h"
 
 #include "InputManager.h"
 

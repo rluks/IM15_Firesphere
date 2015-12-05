@@ -70,7 +70,6 @@
   <ItemGroup>
     <ClCompile Include="Managers\TimeManager.cpp" />
     <ClCompile Include="Physics\Ball.cpp" />
-    <ClCompile Include="Rendering\Models\Line.cpp" />
     <ClCompile Include="Rendering\Camera.cpp" />
     <ClCompile Include="Core\Init\Init_GLEW.cpp" />
     <ClCompile Include="Core\Init\Init_GLUT.cpp" />
@@ -97,7 +96,6 @@
   <ItemGroup>
     <ClInclude Include="Managers\TimeManager.h" />
     <ClInclude Include="Physics\Ball.h" />
-    <ClInclude Include="Rendering\Models\Line.h" />
     <ClInclude Include="Rendering\Camera.h" />
     <ClInclude Include="Core\Init\ContextInfo.h" />
     <ClInclude Include="Core\Init\FrameBufferInfo.h" />
