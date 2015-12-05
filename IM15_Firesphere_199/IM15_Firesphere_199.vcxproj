@@ -68,7 +68,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Physics\Block.cpp" />
     <ClCompile Include="Managers\TimeManager.cpp" />
     <ClCompile Include="Physics\Ball.cpp" />
     <ClCompile Include="Rendering\Models\Line.cpp" />
@@ -81,7 +80,6 @@
     <ClCompile Include="Managers\Scene_Manager.cpp" />
     <ClCompile Include="Managers\Shader_Manager.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Rendering\Models\Brick.cpp" />
     <ClCompile Include="Rendering\Models\Circle.cpp" />
     <ClCompile Include="Rendering\Models\Models.cpp" />
     <ClCompile Include="Rendering\Models\Sphere.cpp" />
@@ -98,7 +96,6 @@
     <None Include="Shaders\Vertex_Shader.glsl" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Physics\Block.h" />
     <ClInclude Include="Managers\TimeManager.h" />
     <ClInclude Include="Physics\Ball.h" />
     <ClInclude Include="Rendering\Models\Line.h" />
@@ -115,7 +112,6 @@
     <ClInclude Include="Core\Init\Init_GLEW.h" />
     <ClInclude Include="Managers\Shader_Manager.h" />
     <ClInclude Include="Rendering\IGameObject.h" />
-    <ClInclude Include="Rendering\Models\Brick.h" />
     <ClInclude Include="Rendering\Models\Circle.h" />
     <ClInclude Include="Rendering\Models\Model.h" />
     <ClInclude Include="Rendering\Models\Sphere.h" />
