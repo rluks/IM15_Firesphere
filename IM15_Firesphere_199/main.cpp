@@ -9,17 +9,12 @@ using namespace Init;
 
 std::string helpMsg = 
 "Welcome to Firesphere 199";
+
 void SpecialInput(int key, int x, int y)
 {
 
 	switch (key)
 	{
-	case GLUT_KEY_UP:
-		InputManager::ConfirmVelocity();
-		break;
-	case GLUT_KEY_DOWN:
-		InputManager::SelectVelocity();
-		break;
 	case GLUT_KEY_LEFT:
 		InputManager::left();
 		break;
@@ -34,10 +29,10 @@ void keySpecialUp(int key, int x, int y) {
 	switch (key)
 	{
 	case GLUT_KEY_LEFT:
-		InputManager::stopTurning();
+		//TODO
 		break;
 	case GLUT_KEY_RIGHT:
-		InputManager::stopTurning();
+		//TODO
 		break;
 	}
 }

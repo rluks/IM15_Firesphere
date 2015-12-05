@@ -26,16 +26,6 @@ InputManager::InputManager()
 
 }
 
-void InputManager::stopBall()
-{
-
-}
-
-void InputManager::playBall()
-{
-
-}
-
 void InputManager::switchCamera()
 {
 	Camera::SwitchViews();
@@ -48,11 +38,6 @@ void InputManager::left()
 }
 
 void InputManager::right()
-{
-	
-}
-
-void InputManager::stopTurning()
 {
 	
 }
@@ -107,14 +92,4 @@ void InputManager::ForwardCamera()
 void InputManager::BackwardCamera()
 {
 	Camera::Translate(0.0f, 0.0f, 0.5f);
-}
-
-void InputManager::ConfirmVelocity()
-{
-
-}
-
-void InputManager::SelectVelocity()
-{
-
 }

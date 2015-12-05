@@ -19,7 +19,6 @@ class InputManager
 
 		static void left();
 		static void right();
-		static void stopTurning();
 
 		static void switchCamera();
 		static void zoomIn();
@@ -33,13 +32,7 @@ class InputManager
 		static void ForwardCamera();
 		static void BackwardCamera();
 
-		static void stopBall();
-		static void playBall();
-
 		static bool switchShaders;
-
-		static void SelectVelocity();
-		static void ConfirmVelocity();
 
 	private:
 		HANDLE hIn;
