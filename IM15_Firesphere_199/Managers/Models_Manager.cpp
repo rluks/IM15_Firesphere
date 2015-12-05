@@ -14,11 +14,6 @@ Models_Manager::Models_Manager()
 	circle->SetProgram(Shader_Manager::GetShader("textureShader"));
 	circle->Create();
 	gameModelList["circle"] = circle;
-
-	Models::Ray* ray = new Models::Ray();
-	ray->SetProgram(Shader_Manager::GetShader("colorShader"));
-	ray->Create();
-	gameModelList["ray"] = ray;
 }
 
 Models_Manager::~Models_Manager()
@@ -46,17 +41,6 @@ void Models_Manager::DeleteModel(const std::string& gameModelName)
 const IGameObject& Models_Manager::GetModel(const std::string& gameModelName) const
 {
 	return (*gameModelList.at(gameModelName));
-}
-
-void Models_Manager::AddLine(glm::vec3 a, glm::vec3 b, const glm::vec4 &color)
-{
-	std::string mapKey = "line" + std::to_string(gameModelList.size());
-	//std::cout << "mapkey" << mapKey << std::endl;
-
-	Models::Line* line = new Models::Line(a, b, color);
-	line->SetProgram(Shader_Manager::GetShader("colorShader"));
-	line->Create();
-	gameModelList[mapKey] = line;
 }
 
 void Models_Manager::Update()
