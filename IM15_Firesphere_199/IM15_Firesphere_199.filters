@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Core">
+      <UniqueIdentifier>{40dfb840-43a8-4e32-b795-d5eb0d1fbcb8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Core\Init\Init_GLEW.cpp" />
+    <ClCompile Include="Core\Init\Init_GLUT.cpp" />
+    <ClCompile Include="Managers\Shader_Manager.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Managers\Scene_Manager.cpp" />
+    <ClCompile Include="Rendering\Models\Models.cpp" />
+    <ClCompile Include="Managers\Models_Manager.cpp" />
+    <ClCompile Include="Rendering\Models\Sphere.cpp" />
+    <ClCompile Include="Rendering\Models\Circle.cpp" />
+    <ClCompile Include="Rendering\tdogl\Bitmap.cpp" />
+    <ClCompile Include="Rendering\tdogl\Texture.cpp" />
+    <ClCompile Include="Rendering\Models\Brick.cpp" />
+    <ClCompile Include="Rendering\Models\Bat.cpp" />
+    <ClCompile Include="Managers\InputManager.cpp" />
+    <ClCompile Include="Rendering\Camera.cpp" />
+    <ClCompile Include="Physics\Ball.cpp" />
+    <ClCompile Include="Managers\TimeManager.cpp" />
+    <ClCompile Include="Rendering\Models\Ray.cpp" />
+    <ClCompile Include="Physics\Block.cpp" />
+    <ClCompile Include="Physics\Bats.cpp" />
+    <ClCompile Include="Rendering\Models\Line.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Shaders\Fragment_Shader.glsl" />
+    <None Include="Shaders\Vertex_Shader.glsl" />
+    <None Include="Shaders\Texture_Fragment_Shader.glsl" />
+    <None Include="Shaders\Texture_Vertex_Shader.glsl" />
+    <None Include="Shaders\TextureAlpha_Fragment_Shader.glsl" />
+    <None Include="Shaders\TextureAlpha_Vertex_Shader.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Core\Init\WindowInfo.h" />
+    <ClInclude Include="Core\Init\ContextInfo.h" />
+    <ClInclude Include="Core\Init\FrameBufferInfo.h" />
+    <ClInclude Include="Core\Init\Init_GLEW.h" />
+    <ClInclude Include="Core\Init\Init_GLUT.h" />
+    <ClInclude Include="Core\Init\IListener.h" />
+    <ClInclude Include="Managers\Shader_Manager.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Managers\Scene_Manager.h" />
+    <ClInclude Include="Rendering\VertexFormat.h" />
+    <ClInclude Include="Rendering\IGameObject.h" />
+    <ClInclude Include="Rendering\Models\Model.h" />
+    <ClInclude Include="Managers\Models_Manager.h" />
+    <ClInclude Include="Rendering\Models\Sphere.h" />
+    <ClInclude Include="Rendering\Models\Circle.h" />
+    <ClInclude Include="OpenGLIncludes.h" />
+    <ClInclude Include="Rendering\tdogl\Bitmap.h" />
+    <ClInclude Include="Rendering\tdogl\Texture.h" />
+    <ClInclude Include="Rendering\tdogl\stb_image.h" />
+    <ClInclude Include="Rendering\Models\Brick.h" />
+    <ClInclude Include="Rendering\Models\Bat.h" />
+    <ClInclude Include="Managers\InputManager.h" />
+    <ClInclude Include="Rendering\Camera.h" />
+    <ClInclude Include="Physics\Ball.h" />
+    <ClInclude Include="Managers\TimeManager.h" />
+    <ClInclude Include="Rendering\Models\Ray.h" />
+    <ClInclude Include="Physics\Block.h" />
+    <ClInclude Include="Physics\Bats.h" />
+    <ClInclude Include="Rendering\Models\Line.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Textures\tileable_grass_00.png" />
+  </ItemGroup>
+</Project>
