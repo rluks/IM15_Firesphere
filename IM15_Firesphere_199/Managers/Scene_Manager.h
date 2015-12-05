@@ -6,8 +6,6 @@
 #include "Models_Manager.h"
 #include "../Core/Init/IListener.h"
 
-#include "../Physics/Block.h"
-
 namespace Managers
 {
 	class Scene_Manager : public Core::IListener
@@ -24,15 +22,10 @@ namespace Managers
 			int previous_width,
 			int previous_height);
 
-		void EraseBlocksWithColor(const glm::vec4 &);
-		float calculateBallBlockDistance(const Block&);
 		int Score;
 
 	private:
 		Managers::Shader_Manager* shader_manager;
 		Managers::Models_Manager* models_manager;
-		int numberOfBlocksAlive;
-
-		std::vector<Block> blocks;
 	};
 }

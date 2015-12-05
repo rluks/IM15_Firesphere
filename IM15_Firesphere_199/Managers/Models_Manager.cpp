@@ -5,22 +5,6 @@ using namespace Rendering;
 
 Models_Manager::Models_Manager()
 {
-
-	/*Models::Triangle* triangle = new Models::Triangle();
-	triangle->SetProgram(Shader_Manager::GetShader("colorShader"));
-	triangle->Create();
-	gameModelList["triangle"] = triangle;*/
-
-	/*Models::Quad* quad = new Models::Quad();
-	quad->SetProgram(Shader_Manager::GetShader("colorShader"));
-	quad->Create();
-	gameModelList["quad"] = quad;*/
-
-	/*Models::Cube* cube = new Models::Cube();
-	cube->SetProgram(Shader_Manager::GetShader("colorShader"));
-	cube->Create();
-	gameModelList["cube"] = cube;*/
-
 	Models::Sphere* sphere = new Models::Sphere();
 	sphere->SetProgram(Shader_Manager::GetShader("textureShader"));
 	sphere->Create();
@@ -31,86 +15,10 @@ Models_Manager::Models_Manager()
 	circle->Create();
 	gameModelList["circle"] = circle;
 
-	glm::vec4 red = glm::vec4(1, 0, 0, 1);
-	glm::vec4 green = glm::vec4(0, 1, 0, 1);
-	glm::vec4 blue = glm::vec4(0, 0, 1, 1);
-	glm::vec4 yellow = glm::vec4(1, 1, 0, 1);
-	glm::vec4 grey = glm::vec4(0.5, 0.5, 0.5, 1);
-	glm::vec4 pink = glm::vec4(1, 0, 1, 1);
-	glm::vec4 azure = glm::vec4(0, 1, 1, 1);
-	glm::vec4 color = yellow;
-	int counter = 0;
-	for (float angle = 0.0f; angle < 360.0f; angle += 60.0f)
-	{
-		switch (counter){
-			case 0:
-				color = yellow;
-				break;
-			case 1:
-				color = azure;
-				break;
-			case 2:
-				color = blue;
-				break;
-			case 3:
-				color = grey;
-				break;
-			case 4:
-				color = pink;
-				break;
-			case 5:
-				color = green;
-				break;
-			default:
-				std::cout << "wrong color" << std::endl;
-				color = glm::vec4(0.1, 0.3, 0.6, 1.0);
-				break;
-
-		}
-
-		std::string mapKey = "brick" + GetColorName(color);
-
-		float ypsilon = 0.0f;
-		Models::Brick* temp = new Models::Brick(angle, color, ypsilon);
-		temp->SetProgram(Shader_Manager::GetShader("textureAlphaShader"));
-		temp->Create();
-		gameModelList[mapKey] = temp;
-
-		mapKey = "brick" + GetColorName(color) + "2";
-		ypsilon += 0.2f;
-
-		Models::Brick* temp2 = new Models::Brick(angle, color, ypsilon);
-		temp2->SetProgram(Shader_Manager::GetShader("textureAlphaShader"));
-		temp2->Create();
-		gameModelList[mapKey] = temp2;
-
-		mapKey = "brick" + GetColorName(color) + "3";
-		ypsilon += 0.2f;
-
-		Models::Brick* temp3 = new Models::Brick(angle, color, ypsilon);
-		temp3->SetProgram(Shader_Manager::GetShader("textureAlphaShader"));
-		temp3->Create();
-		gameModelList[mapKey] = temp3;
-
-		mapKey = "brick" + GetColorName(color) + "4";
-		ypsilon += 0.2f;
-
-		Models::Brick* temp4 = new Models::Brick(angle, color, ypsilon);
-		temp4->SetProgram(Shader_Manager::GetShader("textureAlphaShader"));
-		temp4->Create();
-		gameModelList[mapKey] = temp4;
-
-		counter++;
-	}
-
-
 	Models::Ray* ray = new Models::Ray();
 	ray->SetProgram(Shader_Manager::GetShader("colorShader"));
 	ray->Create();
 	gameModelList["ray"] = ray;
-
-
-
 }
 
 Models_Manager::~Models_Manager()
