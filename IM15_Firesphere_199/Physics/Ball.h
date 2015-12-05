@@ -1,8 +1,6 @@
 #pragma once
 
 #include <iostream>
-
-
 #include <string>
 #include <iomanip>
 
@@ -15,12 +13,8 @@ class Ball
 public:
 	Ball();
 	~Ball();
+
 	static glm::vec3 position;
-	static glm::vec3 velocity;
 	static void Update();
-
-	static float radius;
-
-	static float velocityAngle;
 };
 

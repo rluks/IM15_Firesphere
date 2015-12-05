@@ -68,7 +68,7 @@ void Ray::Update()
 	glm::vec3 upNormal = glm::vec3(0, 1, 0);
 
 	vertices[0] = VertexFormat(spherePosition, red, texCoord, upNormal);
-	vertices[1] = VertexFormat(spherePosition + Ball::velocity, red, texCoord, upNormal);
+	vertices[1] = VertexFormat(spherePosition + glm::vec3(1, 1, 1), red, texCoord, upNormal);
 
 	glBindBuffer(GL_ARRAY_BUFFER, vbo);//update data in buffer!!!
 	glBufferData(GL_ARRAY_BUFFER, sizeof(VertexFormat) * verticesSize, &vertices[0], GL_DYNAMIC_DRAW);
