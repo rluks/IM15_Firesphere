@@ -7,7 +7,6 @@
 #include "..\Rendering\Models\Model.h"
 #include "..\Rendering\Camera.h"
 #include "..\Physics\Ball.h"
-#include "..\Physics\Bats.h"
 
 using namespace std;
 

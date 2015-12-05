@@ -31,36 +31,6 @@ Models_Manager::Models_Manager()
 	circle->Create();
 	gameModelList["circle"] = circle;
 
-	/*Models::Brick* brick = new Models::Brick(0.0f);
-	brick->SetProgram(Shader_Manager::GetShader("colorShader"));
-	brick->Create();
-	gameModelList["brick"] = brick;*/
-
-	/*float y = 0.125f;
-	float pi = 3.14159265358979323846f;
-	float angleDelta = pi / 8.0f;
-	float endAngle = pi / 3.0f;
-	float smallerRadius = 0.7f;
-	for (float angle = 0.0f; angle < endAngle; angle += angleDelta)
-	{
-		float x = cos(angle);
-		float z = sin(angle);
-
-		float x2 = cos(angle + angleDelta);
-		float z2 = sin(angle + angleDelta);
-
-		glm::vec3 a = glm::vec3(x, y, z);
-		glm::vec3 b = glm::vec3(x2, y, z2);
-
-		glm::vec4 pink = glm::vec4(1, 0, 1, 1);
-
-		std::string mapKey = "line" + std::to_string(angle);
-		Models::Line* line = new Models::Line(a, b, pink);
-		line->SetProgram(Shader_Manager::GetShader("colorShader"));
-		line->Create();
-		gameModelList[mapKey] = line;
-	}*/
-
 	glm::vec4 red = glm::vec4(1, 0, 0, 1);
 	glm::vec4 green = glm::vec4(0, 1, 0, 1);
 	glm::vec4 blue = glm::vec4(0, 0, 1, 1);
@@ -130,17 +100,9 @@ Models_Manager::Models_Manager()
 		temp4->Create();
 		gameModelList[mapKey] = temp4;
 
-		/*Models::BrickCollider* brickCollider = new Models::BrickCollider(angle);
-		brickCollider->SetProgram(Shader_Manager::GetShader("colorShader"));
-		brickCollider->Create();
-		gameModelList[mapKey + "Collider"] = brickCollider;*/
 		counter++;
 	}
 
-	Models::Bat* bat = new Models::Bat(0.0f);
-	bat->SetProgram(Shader_Manager::GetShader("textureAlphaShader"));
-	bat->Create();
-	gameModelList["bat"] = bat;
 
 	Models::Ray* ray = new Models::Ray();
 	ray->SetProgram(Shader_Manager::GetShader("colorShader"));

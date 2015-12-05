@@ -119,8 +119,6 @@ Scene_Manager::Scene_Manager()
 		blocks.push_back(blocktemp2);
 	}
 
-	bats = Bats(0);
-
 	Ball::selectVelocity = true;
 	Ball::enableMovement = false;
 
@@ -136,8 +134,6 @@ void Scene_Manager::notifyBeginFrame()
 {
 	//dealing with bats blocks
 	blocks.resize(numberOfBlocksAlive);
-	bats.Update();
-	blocks.insert(blocks.end(), bats.blocksRotated.begin(), bats.blocksRotated.end());//append new blocks
 
 	if (Ball::enableMovement){
 		glm::vec2 ballPosition2D = glm::vec2(Ball::position.x, Ball::position.z);
