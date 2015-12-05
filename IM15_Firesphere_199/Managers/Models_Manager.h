@@ -30,8 +30,6 @@ namespace Managers
 			const IGameObject& GetModel(const std::string& gameModelName) const;
 			void AddLine(glm::vec3, glm::vec3, const glm::vec4 &);
 
-			static std::string GetColorName(const glm::vec4 &);
-
 		private:
 			std::map<std::string, IGameObject*> gameModelList;
 		};

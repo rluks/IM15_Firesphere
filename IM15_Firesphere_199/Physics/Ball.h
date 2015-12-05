@@ -18,14 +18,9 @@ public:
 	static glm::vec3 position;
 	static glm::vec3 velocity;
 	static void Update();
-	static void CorrectionUpdate(double);
 
-	static double startTime;
-	static double endTime;
 	static float radius;
 
-	static bool enableMovement;
-	static bool selectVelocity;
 	static float velocityAngle;
 };
 

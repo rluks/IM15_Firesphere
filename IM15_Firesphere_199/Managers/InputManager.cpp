@@ -28,12 +28,12 @@ InputManager::InputManager()
 
 void InputManager::stopBall()
 {
-	Ball::enableMovement = false;
+
 }
 
 void InputManager::playBall()
 {
-	Ball::enableMovement = true;
+
 }
 
 void InputManager::switchCamera()
@@ -111,13 +111,10 @@ void InputManager::BackwardCamera()
 
 void InputManager::ConfirmVelocity()
 {
-	//std::cout << "Position: " << Ball::position.x << ", " << Ball::position.z << " Velocity: " << Ball::velocity.x << ", " << Ball::velocity.z << std::endl;
-	Ball::enableMovement = true;
-	Ball::selectVelocity = false;
+
 }
 
 void InputManager::SelectVelocity()
 {
-	Ball::enableMovement = false;
-	Ball::selectVelocity = true;
+
 }
