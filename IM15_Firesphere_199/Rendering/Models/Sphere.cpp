@@ -112,15 +112,15 @@ void Sphere::Create()
 
 void Sphere::Update()
 {
-	dxR += 1.0f;
+	dxR += 0.25f;
 	if (dxR > 360.0f)
 		dxR = 0.0f;
 
 	spherePosition = Ball::position;
 
 	modelmx = glm::translate(identityMx, glm::vec3(spherePosition.x, 0.125f, spherePosition.z));
-	rotated = glm::rotate(modelmx, glm::radians(dxR), glm::vec3(1.0f, 1.0f, 0.0f));
-	scaledMx = glm::scale(rotated, glm::vec3(0.125f));
+	rotated = glm::rotate(modelmx, glm::radians(dxR), glm::vec3(0.0f, 1.0f, 0.0f));
+	scaledMx = glm::scale(rotated, glm::vec3(0.9f));
 
 	cameraMatrixCopy = Camera::cameraMatrix;
 }
