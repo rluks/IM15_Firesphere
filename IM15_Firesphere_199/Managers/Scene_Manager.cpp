@@ -32,7 +32,7 @@ void Scene_Manager::notifyBeginFrame()
 {	
 	models_manager->Update();
 	Camera::Update();
-	Ball::Update();
+	//Ball::Update();
 }
 
 void Scene_Manager::notifyDisplayFrame()
