@@ -15,7 +15,7 @@ Models_Manager::Models_Manager()
 	sphereSky->Create();
 	sphereSky->SetTexture(Models::Model::spaceTexture);
 	sphereSky->scale = 13.2f;
-	sphereSky->rotationIncrement = 0.025f;
+	sphereSky->rotationIncrement = 0.0025f;
 	gameModelList["sky"] = sphereSky;
 
 	//Models::Circle* circle = new Models::Circle();

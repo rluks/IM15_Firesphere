@@ -131,6 +131,12 @@
     <None Include="Shaders\Fragment_Shader.glsl">
       <Filter>Shaders</Filter>
     </None>
+    <None Include="Shaders\spaceTexture_Fragment_Shader.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\spaceTexture_Vertex_Shader.glsl">
+      <Filter>Shaders</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Core">

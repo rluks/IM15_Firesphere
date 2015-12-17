@@ -53,5 +53,5 @@ void main(void)
     out_color = vec4(pow(linearColor, gamma), surfaceColor.a);
 	//out_color.a = 0.5;
 		
-		//out_color = texture(tex, vec2(1 - fragTexCoord.x, fragTexCoord.y));
+	out_color = texture(tex, vec2(1 - fragTexCoord.x, fragTexCoord.y));
 }
