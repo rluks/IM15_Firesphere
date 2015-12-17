@@ -11,9 +11,11 @@ Models_Manager::Models_Manager()
 	gameModelList["fireball"] = sphere;
 
 	Models::Sphere* sphereSky = new Models::Sphere();
-	sphere->SetTexture(Models::Model::spaceTexture);
 	sphereSky->SetProgram(Shader_Manager::GetShader("textureShader"));
 	sphereSky->Create();
+	sphereSky->SetTexture(Models::Model::spaceTexture);
+	sphereSky->scale = 13.2f;
+	sphereSky->rotationIncrement = 0.025f;
 	gameModelList["sky"] = sphereSky;
 
 	//Models::Circle* circle = new Models::Circle();

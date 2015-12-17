@@ -29,7 +29,9 @@ namespace Rendering
 			glm::mat4 rotated;
 			glm::mat4 scaledMx;
 
-			void SetTexture(tdogl::Bitmap bmp);
+			void SetTexture(tdogl::Bitmap bmp);//ballTexture is set implicitly
+			float scale;//size of the sphere
+			float rotationIncrement;
 		};
 	}
 }

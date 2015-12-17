@@ -17,6 +17,9 @@ Sphere::Sphere()
 		glm::vec4(0, 1, 0, 0),
 		glm::vec4(0, 0, 1, 0),
 		glm::vec4(0, 0, 0, 1));
+
+	scale = 1.0f;
+	rotationIncrement = 0.0f;
 }
 
 Sphere::~Sphere()
@@ -26,7 +29,6 @@ void Sphere::Create()
 {
 	GLuint vao;
 	GLuint vbo;
-
 
 	tdogl::Bitmap bmp = Model::ballTexture;
 	gTexture = new tdogl::Texture(bmp);
@@ -112,7 +114,7 @@ void Sphere::Create()
 
 void Sphere::Update()
 {
-	dxR += 0.25f;
+	dxR += rotationIncrement;
 	if (dxR > 360.0f)
 		dxR = 0.0f;
 
@@ -120,7 +122,7 @@ void Sphere::Update()
 
 	modelmx = glm::translate(identityMx, glm::vec3(spherePosition.x, 0.125f, spherePosition.z));
 	rotated = glm::rotate(modelmx, glm::radians(dxR), glm::vec3(0.0f, 1.0f, 0.0f));
-	scaledMx = glm::scale(rotated, glm::vec3(0.9f));
+	scaledMx = glm::scale(rotated, glm::vec3(scale));
 
 	cameraMatrixCopy = Camera::cameraMatrix;
 }
