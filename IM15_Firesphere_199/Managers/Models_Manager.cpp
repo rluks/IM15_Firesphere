@@ -11,7 +11,7 @@ Models_Manager::Models_Manager()
 	gameModelList["fireball"] = sphere;
 
 	Models::Sphere* sphereSky = new Models::Sphere();
-	sphereSky->SetProgram(Shader_Manager::GetShader("textureShader"));
+	sphereSky->SetProgram(Shader_Manager::GetShader("spaceShader"));
 	sphereSky->Create();
 	sphereSky->SetTexture(Models::Model::spaceTexture);
 	sphereSky->scale = 13.2f;

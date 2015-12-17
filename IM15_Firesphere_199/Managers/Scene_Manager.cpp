@@ -19,6 +19,10 @@ Scene_Manager::Scene_Manager()
 		"Shaders\\TextureAlpha_Vertex_Shader.glsl",
 		"Shaders\\TextureAlpha_Fragment_Shader.glsl");
 
+	shader_manager->CreateProgram("spaceShader",
+		"Shaders\\spaceTexture_Vertex_Shader.glsl",
+		"Shaders\\spaceTexture_Fragment_Shader.glsl");
+
 	models_manager = new Models_Manager();
 }
 
