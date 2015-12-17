@@ -28,6 +28,8 @@ namespace Rendering
 			glm::mat4 modelmx;
 			glm::mat4 rotated;
 			glm::mat4 scaledMx;
+
+			void SetTexture(tdogl::Bitmap bmp);
 		};
 	}
 }

@@ -125,6 +125,11 @@ void Sphere::Update()
 	cameraMatrixCopy = Camera::cameraMatrix;
 }
 
+void Sphere::SetTexture(tdogl::Bitmap bmp)
+{
+	gTexture = new tdogl::Texture(bmp);
+}
+
 void Sphere::Draw()
 {
 	glUseProgram(program);	

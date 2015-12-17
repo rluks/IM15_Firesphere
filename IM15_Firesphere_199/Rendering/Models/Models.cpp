@@ -3,8 +3,8 @@
 using namespace Rendering;
 using namespace Models;
 
-tdogl::Bitmap Model::ballTexture = tdogl::Bitmap::bitmapFromFile("Textures/sky.png");
-tdogl::Bitmap Model::grassTexture = tdogl::Bitmap::bitmapFromFile("Textures/grid.png");
+tdogl::Bitmap Model::ballTexture = tdogl::Bitmap::bitmapFromFile("Textures/SunTexture_2048.png");
+tdogl::Bitmap Model::spaceTexture = tdogl::Bitmap::bitmapFromFile("Textures/sky.png");
 
 Model::Model()
 {

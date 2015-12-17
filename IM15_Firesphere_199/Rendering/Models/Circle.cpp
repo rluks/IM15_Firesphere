@@ -17,7 +17,7 @@ void Circle::Create()
 	GLuint vao;
 	GLuint vbo;
 
-	tdogl::Bitmap bmp = Model::grassTexture;
+	tdogl::Bitmap bmp = Model::spaceTexture;
 
 	gTexture = new tdogl::Texture(bmp);
 

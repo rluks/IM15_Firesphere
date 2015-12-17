@@ -10,6 +10,8 @@
 
 #include "InputManager.h"
 
+#include "../Rendering/Models/Model.h"
+
 using namespace Rendering;
 
 namespace Managers

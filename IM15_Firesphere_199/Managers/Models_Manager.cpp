@@ -8,12 +8,18 @@ Models_Manager::Models_Manager()
 	Models::Sphere* sphere = new Models::Sphere();
 	sphere->SetProgram(Shader_Manager::GetShader("textureShader"));
 	sphere->Create();
-	gameModelList["sphere"] = sphere;
+	gameModelList["fireball"] = sphere;
 
-	Models::Circle* circle = new Models::Circle();
-	circle->SetProgram(Shader_Manager::GetShader("textureShader"));
-	circle->Create();
-	gameModelList["circle"] = circle;
+	Models::Sphere* sphereSky = new Models::Sphere();
+	sphere->SetTexture(Models::Model::spaceTexture);
+	sphereSky->SetProgram(Shader_Manager::GetShader("textureShader"));
+	sphereSky->Create();
+	gameModelList["sky"] = sphereSky;
+
+	//Models::Circle* circle = new Models::Circle();
+	//circle->SetProgram(Shader_Manager::GetShader("textureShader"));
+	//circle->Create();
+	//gameModelList["circle"] = circle;
 }
 
 Models_Manager::~Models_Manager()
