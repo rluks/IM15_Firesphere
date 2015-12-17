@@ -140,7 +140,8 @@ void Sphere::Draw()
 	glUniformMatrix4fv(projection, 1, GL_FALSE, glm::value_ptr(Camera::projectionMatrix));
 	glUniformMatrix4fv(model, 1, GL_FALSE, glm::value_ptr(scaledMx));
 
-	glm::vec3 lightPos = glm::vec3(Ball::position.x, Ball::position.y + 3, Ball::position.z);
+	//glDisable(GL_CULL_FACE);
+	glm::vec3 lightPos = glm::vec3(Ball::position.x + 7, Ball::position.y + 7, Ball::position.z);
 	glUniform3fv(lightPosition, 1, glm::value_ptr(lightPos));
 	glUniform3fv(lightColor, 1, glm::value_ptr(Camera::myLightColor));
 

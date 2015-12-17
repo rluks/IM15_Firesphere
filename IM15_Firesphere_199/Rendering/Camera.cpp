@@ -57,7 +57,7 @@ void Camera::Update()
 
 	projectionMatrix = glm::perspective(glm::radians(FoV), 
 										800.0f / 600.0f, 
-										0.1f, 10.0f);
+										0.1f, 22.0f);
 
 	cameraMatrix = glm::rotate(cameraMatrix, glm::radians(RotateAngle), glm::vec3(0.0f, 1.0f, 0.0f));
 }
