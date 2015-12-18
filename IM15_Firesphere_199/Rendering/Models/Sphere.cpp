@@ -41,6 +41,8 @@ void Sphere::Create()
 	glm::vec4 blue = glm::vec4(0, 0, 1, 1);
 
 	int n = 2;//fidelity
+	//TODO bench fidelity
+	//or just load from 3dsmax pbkect
 	unsigned int rings = 12*n;
 	unsigned int sectors = 24*n;
 
