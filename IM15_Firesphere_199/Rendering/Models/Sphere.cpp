@@ -152,6 +152,21 @@ void Sphere::Draw()
 	glUniform1i(texture2d, 0);
 
 	glBindVertexArray(vao);
+
+	glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_SHORT, &indices[0]);//comment this to see the wireframe
+
+	/*
+	// offset the wireframe 
+	glEnable(GL_POLYGON_OFFSET_LINE);
+	glPolygonOffset(-5, -5);
+
+	// draw the wireframe
+	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_SHORT, &indices[0]);
+
+	// restore default polygon mode
+	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+	glDisable(GL_POLYGON_OFFSET_LINE);
+	*/
 
 }
