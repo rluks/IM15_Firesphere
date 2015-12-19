@@ -44,6 +44,7 @@
     <ClCompile Include="Rendering\Camera.cpp">
       <Filter>Rendering</Filter>
     </ClCompile>
+    <ClCompile Include="GLError.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="OpenGLIncludes.h" />
@@ -110,6 +111,7 @@
     <ClInclude Include="Rendering\VertexFormat.h">
       <Filter>Rendering</Filter>
     </ClInclude>
+    <ClInclude Include="GLError.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

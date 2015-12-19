@@ -10,6 +10,8 @@
 
 #include "..\..\Physics\Ball.h"
 
+#include "..\..\GLError.h"
+
 namespace Rendering
 {
 	namespace Models

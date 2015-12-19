@@ -68,6 +68,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GLError.cpp" />
     <ClCompile Include="Managers\TimeManager.cpp" />
     <ClCompile Include="Physics\Ball.cpp" />
     <ClCompile Include="Rendering\Camera.cpp" />
@@ -96,6 +97,7 @@
     <None Include="Shaders\Vertex_Shader.glsl" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GLError.h" />
     <ClInclude Include="Managers\TimeManager.h" />
     <ClInclude Include="Physics\Ball.h" />
     <ClInclude Include="Rendering\Camera.h" />

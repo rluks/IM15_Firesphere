@@ -155,6 +155,8 @@ void Sphere::Draw()
 
 	glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_SHORT, &indices[0]);//comment this to see the wireframe
 
+	check_gl_error();
+
 	/*
 	// offset the wireframe 
 	glEnable(GL_POLYGON_OFFSET_LINE);
