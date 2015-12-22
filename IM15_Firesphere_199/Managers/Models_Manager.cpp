@@ -7,6 +7,7 @@ Models_Manager::Models_Manager()
 {
 	Models::Sphere* sphere = new Models::Sphere();
 	sphere->SetProgram(Shader_Manager::GetShader("textureShader"));
+	//sphere->SetProgram(Shader_Manager::GetShader("noiseShader"));
 	sphere->Create();
 	gameModelList["fireball"] = sphere;
 

@@ -50,6 +50,10 @@ namespace Rendering
 			GLuint lightPosition;
 			GLuint lightColor;
 
+			GLint _time;
+
+			double start;
+
 			glm::mat4 cameraMatrixCopy;
 
 		};

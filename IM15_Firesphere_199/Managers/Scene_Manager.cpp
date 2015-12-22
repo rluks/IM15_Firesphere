@@ -23,6 +23,10 @@ Scene_Manager::Scene_Manager()
 		"Shaders\\spaceTexture_Vertex_Shader.glsl",
 		"Shaders\\spaceTexture_Fragment_Shader.glsl");
 
+	//shader_manager->CreateProgram("noiseShader",
+	//	"Shaders\\noise_Vertex_Shader.glsl",
+	//	"Shaders\\noise_Fragment_Shader.glsl");
+
 	models_manager = new Models_Manager();
 }
 

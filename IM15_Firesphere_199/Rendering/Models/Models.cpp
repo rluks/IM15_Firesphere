@@ -3,13 +3,15 @@
 using namespace Rendering;
 using namespace Models;
 
-tdogl::Bitmap Model::ballTexture = tdogl::Bitmap::bitmapFromFile("Textures/SunTexture_2048.png");
+tdogl::Bitmap Model::ballTexture = tdogl::Bitmap::bitmapFromFile("Textures/explosion.png");
 tdogl::Bitmap Model::spaceTexture = tdogl::Bitmap::bitmapFromFile("Textures/sky.png");
 
 Model::Model()
 {
 	verticesSize = 0;
 	gTexture = NULL;
+
+	start = TimeManager::GetTime();
 }
 
 Model::~Model()
@@ -47,6 +49,10 @@ void Model::SetProgram(GLuint program)
 
 	lightColor = glGetUniformLocation(program, "lightColor");
 	lightPosition = glGetUniformLocation(program, "lightPosition");
+
+	_time = glGetUniformLocation(program, "time");
+
+
 }
 
 GLuint Model::GetVao() const
