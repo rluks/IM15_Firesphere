@@ -23,10 +23,6 @@ Scene_Manager::Scene_Manager()
 		"Shaders\\spaceTexture_Vertex_Shader.glsl",
 		"Shaders\\spaceTexture_Fragment_Shader.glsl");
 
-	//shader_manager->CreateProgram("noiseShader",
-	//	"Shaders\\noise_Vertex_Shader.glsl",
-	//	"Shaders\\noise_Fragment_Shader.glsl");
-
 	models_manager = new Models_Manager();
 }
 
@@ -38,15 +34,15 @@ Scene_Manager::~Scene_Manager()
 
 void Scene_Manager::notifyBeginFrame()
 {	
-	models_manager->Update();
-	Camera::Update();
-	//Ball::Update();
+	//if (TimeManager::CalculateFrameRate() >= 60) {
+		models_manager->Update();
+		Camera::Update();
+		//Ball::Update();
+//	}
 }
 
 void Scene_Manager::notifyDisplayFrame()
 {
-	//TimeManager::CalculateFrameRate();
-
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glClearColor(0.0, 0.0, 0.0, 1.0);
 

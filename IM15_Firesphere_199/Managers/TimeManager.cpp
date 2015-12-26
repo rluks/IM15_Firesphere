@@ -1,8 +1,8 @@
 #include "TimeManager.h"
 
-
 double TimeManager::DeltaTime;
 double TimeManager::CurrentTime;
+
 
 // This returns the current time in seconds (uses C++ 11 system_clock)
 double TimeManager::GetTime()
@@ -19,7 +19,7 @@ double TimeManager::GetTime()
 
 double TimeManager::CalculateFrameRate()
 {
-	bool writeToConsole = false;
+	bool writeToConsole = true;
 
 	// Below we create a bunch of static variables to track the deltas of the time.
 
@@ -28,6 +28,7 @@ double TimeManager::CalculateFrameRate()
 	static double lastTime = GetTime();									// This will hold the time from the last frame
 	static char strFrameRate[50] = { 0 };								// We will store the string here for the window title
 	static double currentFPS = 0.0f;									// This stores the current frames per second
+
 
 	// Grab the current time in seconds from our environment's time function wrapped in our WindowManager	
 	CurrentTime = GetTime();
@@ -46,8 +47,9 @@ double TimeManager::CalculateFrameRate()
 	// Let's say we got 12031 (12.031) from GetTime() for the CurrentTime, and the startTime had 11230 (11.230).  
 	// Well, 12.031 - 11.230 = 0.801, which is NOT a full second.  So we try again the next frame.  Once the 
 	// CurrentTime - startTime comes out to be > 1 second, we calculate the frames for this last second.
-	if (CurrentTime - startTime > 1.0f)
+	if (CurrentTime - startTime > (1.0f))
 	{
+
 		// Here we set the startTime to the currentTime.  This will be used as the starting point for the next second.
 		// This is because GetTime() counts up, so we need to create a delta that subtract the current time from.
 		startTime = CurrentTime;
@@ -61,6 +63,9 @@ double TimeManager::CalculateFrameRate()
 
 		// Reset the frames per second
 		framesPerSecond = 0;
+	}
+	else {
+		std::this_thread::sleep_for(std::chrono::milliseconds(15));
 	}
 
 	// Return the most recent FPS
