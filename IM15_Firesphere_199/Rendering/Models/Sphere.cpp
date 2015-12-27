@@ -41,7 +41,7 @@ void Sphere::Create()
 
 	glm::vec4 blue = glm::vec4(0, 0, 1, 1);
 
-	int n = 2;//fidelity
+	int n = 12;//fidelity
 	//TODO bench fidelity
 	//or just load from 3dsmax pbkect
 	unsigned int rings = 12*n;
@@ -148,6 +148,7 @@ void Sphere::Draw()
 
 	std::cout << TimeManager::GetTime() - start << std::endl;
 	double timediff = (TimeManager::GetTime() - start) / 10;
+	//timediff = 1;
 	glUniform1f(glGetUniformLocation(program, "time"), timediff);//
 
 	//glDisable(GL_CULL_FACE);
