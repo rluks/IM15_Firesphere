@@ -147,7 +147,8 @@ void Sphere::Draw()
 	glUniformMatrix4fv(model, 1, GL_FALSE, glm::value_ptr(scaledMx));
 
 	std::cout << TimeManager::GetTime() - start << std::endl;
-	glUniform1f(glGetUniformLocation(program, "time"), TimeManager::GetTime() - start);
+	double timediff = (TimeManager::GetTime() - start) / 10;
+	glUniform1f(glGetUniformLocation(program, "time"), timediff);//
 
 	//glDisable(GL_CULL_FACE);
 	glm::vec3 lightPos = glm::vec3(Ball::position.x + 7, Ball::position.y + 7, Ball::position.z);
