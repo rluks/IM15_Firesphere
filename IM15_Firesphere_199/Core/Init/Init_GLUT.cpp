@@ -1,5 +1,6 @@
 #include "Init_GLUT.h"
 
+//Initialize OpenGL
 using namespace Core::Init;
 
 Core::IListener* Init_GLUT::listener = NULL;
