@@ -15,12 +15,8 @@ class InputManager
 	public:
 		InputManager();
 
-		void SpecialInput(int key, int x, int y);
+		//void SpecialInput(int key, int x, int y);
 
-		static void left();
-		static void right();
-
-		static void switchCamera();
 		static void zoomIn();
 		static void zoomOut();
 		static void Rotate();

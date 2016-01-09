@@ -146,7 +146,7 @@ void Sphere::Draw()
 	glUniformMatrix4fv(projection, 1, GL_FALSE, glm::value_ptr(Camera::projectionMatrix));
 	glUniformMatrix4fv(model, 1, GL_FALSE, glm::value_ptr(scaledMx));
 
-	std::cout << TimeManager::GetTime() - start << std::endl;
+	//std::cout << TimeManager::GetTime() - start << std::endl;
 	double timediff = (TimeManager::GetTime() - start) / 10;
 	//timediff = 1;
 	glUniform1f(glGetUniformLocation(program, "time"), timediff);//

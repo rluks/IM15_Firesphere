@@ -11,20 +11,6 @@ std::string helpMsg =
 "Welcome to Firesphere 199";
 
 //Methods handling input from user
-void SpecialInput(int key, int x, int y)
-{
-
-	switch (key)
-	{
-	case GLUT_KEY_LEFT:
-		InputManager::left();
-		break;
-	case GLUT_KEY_RIGHT:
-		InputManager::right();
-		break;
-	}
-}
-
 void keySpecialUp(int key, int x, int y) {
 
 	switch (key)
@@ -56,9 +42,6 @@ void keyboardInput(unsigned char key, int x, int y)
 {
 	if (key == 'r')
 		InputManager::Rotate();
-
-	if (key == 'c')
-		InputManager::switchCamera();
 
 	if (key == 'w')
 		InputManager::UpCamera();
@@ -96,7 +79,6 @@ int main(int argc, char **argv)
 
 	//set input methods
 	InputManager* input = new InputManager();
-	glutSpecialFunc(SpecialInput);
 	glutMouseWheelFunc(mouseWheel);
 	glutKeyboardFunc(keyboardInput);
 	glutSpecialUpFunc(keySpecialUp);

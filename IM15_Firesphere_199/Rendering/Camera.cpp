@@ -1,5 +1,7 @@
 #include "Camera.h"
 
+float Camera::FoVMin = 5.0f;
+float Camera::FoVMax = 100.0f;
 float Camera::FoV = 35.0f;
 float Camera::RotateDelta = 0.0f;
 float Camera::RotateAngle = 0.0f;
@@ -23,19 +25,11 @@ glm::mat4 Camera::cameraMatrix = glm::lookAt(Camera::selectedView,
 Camera::Camera(){}
 Camera::~Camera(){}
 
-void Camera::SwitchViews()
-{
-	if (selectedView == perspectiveView)
-		selectedView = topView;
-	else if (selectedView == topView)
-		selectedView = ballView;
-	else
-		selectedView = perspectiveView;
-}
-
 void Camera::UpdateProjectionMatrix(float pFoV)
 {
-	FoV += pFoV;
+	std::cout << FoV << " pfov:" << pFoV << std::endl;
+	if(FoV > FoVMin && pFoV < 0.0f || FoV < FoVMax && pFoV > 0.0f)
+		FoV += pFoV;
 }
 
 void Camera::Update()

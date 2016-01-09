@@ -11,7 +11,6 @@ class Camera
 public:
 	Camera();
 	~Camera();
-	static void SwitchViews();
 	static void UpdateProjectionMatrix(float);
 	static void Rotate();
 	static void DisableRotate();
@@ -32,6 +31,8 @@ public:
 
 
 	static float FoV;
+	static float FoVMin;
+	static float FoVMax;
 	static float RotateDelta;
 	static float RotateAngle;
 
