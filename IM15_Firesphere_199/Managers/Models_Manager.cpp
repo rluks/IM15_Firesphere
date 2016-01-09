@@ -3,14 +3,16 @@
 using namespace Managers;
 using namespace Rendering;
 
+//stores 3d models
 Models_Manager::Models_Manager()
 {
+	//firesphere
 	Models::Sphere* sphere = new Models::Sphere();
 	sphere->SetProgram(Shader_Manager::GetShader("textureShader"));
-	//sphere->SetProgram(Shader_Manager::GetShader("noiseShader"));
 	sphere->Create();
 	gameModelList["fireball"] = sphere;
 
+	//the skybox
 	Models::Sphere* sphereSky = new Models::Sphere();
 	sphereSky->SetProgram(Shader_Manager::GetShader("spaceShader"));
 	sphereSky->Create();
@@ -18,11 +20,6 @@ Models_Manager::Models_Manager()
 	sphereSky->scale = 13.2f;
 	sphereSky->rotationIncrement = 0.0025f;
 	gameModelList["sky"] = sphereSky;
-
-	//Models::Circle* circle = new Models::Circle();
-	//circle->SetProgram(Shader_Manager::GetShader("textureShader"));
-	//circle->Create();
-	//gameModelList["circle"] = circle;
 }
 
 Models_Manager::~Models_Manager()

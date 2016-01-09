@@ -6,6 +6,7 @@ std::map<std::string, GLuint> Shader_Manager::programs;
 
 Shader_Manager::Shader_Manager(void){}
 
+//is used for compiling and working with shaders
 Shader_Manager::~Shader_Manager(void){
 
 	for (std::map<std::string, GLuint>::iterator i = programs.begin();

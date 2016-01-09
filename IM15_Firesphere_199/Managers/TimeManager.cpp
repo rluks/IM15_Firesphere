@@ -1,5 +1,7 @@
 #include "TimeManager.h"
 
+//Time manager for showing fps
+//copy-pasted from stackoverflow
 
 double TimeManager::DeltaTime;
 double TimeManager::CurrentTime;
