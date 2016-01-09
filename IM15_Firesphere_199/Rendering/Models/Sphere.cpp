@@ -41,9 +41,7 @@ void Sphere::Create()
 
 	glm::vec4 blue = glm::vec4(0, 0, 1, 1);
 
-	int n = 12;//fidelity
-	//TODO bench fidelity
-	//or just load from 3dsmax pbkect
+	int n = 12;//fidelity (level of detail of sphere)
 	unsigned int rings = 12*n;
 	unsigned int sectors = 24*n;
 
@@ -126,8 +124,6 @@ void Sphere::Update()
 	modelmx = glm::translate(identityMx, glm::vec3(spherePosition.x, 0.125f, spherePosition.z));
 	rotated = glm::rotate(modelmx, glm::radians(dxR), glm::vec3(0.0f, 1.0f, 0.0f));
 	scaledMx = glm::scale(rotated, glm::vec3(scale));
-
-
 
 	cameraMatrixCopy = Camera::cameraMatrix;
 

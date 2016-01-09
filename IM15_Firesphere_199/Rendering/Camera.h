@@ -6,6 +6,7 @@
 
 #include "../Physics/Ball.h"
 
+//class to handle camera (field of view, rotation, projection mx, etc)
 class Camera
 {
 public:

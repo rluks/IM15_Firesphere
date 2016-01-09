@@ -3,6 +3,7 @@
 
 namespace Rendering
 {
+	//our format of data we pass to gpu
 	struct VertexFormat
 	{
 		glm::vec3 position;

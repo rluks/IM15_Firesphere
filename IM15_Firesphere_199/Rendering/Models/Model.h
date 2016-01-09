@@ -13,7 +13,8 @@
 
 namespace Rendering
 {
-	namespace Models //create another namespace
+	//parent for all the models, implements interface to uniformly handle different objects
+	namespace Models
 	{
 		class Model :public IGameObject
 		{

@@ -12,6 +12,7 @@
 
 namespace Rendering
 {
+	//interface for rendering objects uniformly
 	class IGameObject
 	{
 		public:

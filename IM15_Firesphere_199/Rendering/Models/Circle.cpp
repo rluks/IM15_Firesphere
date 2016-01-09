@@ -5,7 +5,7 @@ using namespace Models;
 
 float dx = 0.0f;
 
-
+//simple circle object, just for trying out opengl
 Circle::Circle()
 {}
 
