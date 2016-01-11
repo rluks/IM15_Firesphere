@@ -7,6 +7,7 @@
 
 namespace Core{
 
+	//structure for storing info about buffer
 	struct FramebufferInfo{
 
 		unsigned int flags;

@@ -4,6 +4,7 @@
 bool InputManager::switchShaders = false;
 bool InputManager::rotate = false;
 
+//handles input from user
 InputManager::InputManager()
 {
 	bool Continue = TRUE;
@@ -26,22 +27,8 @@ InputManager::InputManager()
 
 }
 
-void InputManager::switchCamera()
-{
-	Camera::SwitchViews();
-	//switchShaders = !switchShaders;
-}
 
-void InputManager::left()
-{
-	
-}
-
-void InputManager::right()
-{
-	
-}
-
+//methods for which change camera (zoom, pos, rotation)
 void InputManager::zoomIn()
 {
 	Camera::UpdateProjectionMatrix(-5.0f);

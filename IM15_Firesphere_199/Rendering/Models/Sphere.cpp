@@ -41,9 +41,7 @@ void Sphere::Create()
 
 	glm::vec4 blue = glm::vec4(0, 0, 1, 1);
 
-	int n = 2;//fidelity
-	//TODO bench fidelity
-	//or just load from 3dsmax pbkect
+	int n = 12;//fidelity (level of detail of sphere)
 	unsigned int rings = 12*n;
 	unsigned int sectors = 24*n;
 
@@ -127,8 +125,6 @@ void Sphere::Update()
 	rotated = glm::rotate(modelmx, glm::radians(dxR), glm::vec3(0.0f, 1.0f, 0.0f));
 	scaledMx = glm::scale(rotated, glm::vec3(scale));
 
-
-
 	cameraMatrixCopy = Camera::cameraMatrix;
 
 }
@@ -146,7 +142,10 @@ void Sphere::Draw()
 	glUniformMatrix4fv(projection, 1, GL_FALSE, glm::value_ptr(Camera::projectionMatrix));
 	glUniformMatrix4fv(model, 1, GL_FALSE, glm::value_ptr(scaledMx));
 
-	glUniform1f(glGetUniformLocation(program, "time"), (TimeManager::GetTime() - start)/10);
+	//std::cout << TimeManager::GetTime() - start << std::endl;
+	double timediff = (TimeManager::GetTime() - start) / 10;
+	//timediff = 1;
+	glUniform1f(glGetUniformLocation(program, "time"), timediff);//
 
 	//glDisable(GL_CULL_FACE);
 	glm::vec3 lightPos = glm::vec3(Ball::position.x + 7, Ball::position.y + 7, Ball::position.z);

@@ -2,7 +2,7 @@
 
 namespace Core
 {
-
+	//interface listener to handle events
 	class IListener
 	{
 		public:

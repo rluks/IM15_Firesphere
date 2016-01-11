@@ -12,7 +12,8 @@
 #endif
  
 using namespace std;
- 
+
+//copy paste from basecode to nicely print opengl errors
 void _check_gl_error(const char *file, int line) {
         GLenum err (glGetError());
  

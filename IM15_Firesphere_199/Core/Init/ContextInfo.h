@@ -1,6 +1,7 @@
 namespace Core{
 
 	//OpenGL versions
+	//structure for storing opengl context
 	struct ContextInfo
 	{
 		int major_version, minor_version;

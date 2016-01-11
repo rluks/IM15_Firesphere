@@ -10,20 +10,7 @@ using namespace Init;
 std::string helpMsg = 
 "Welcome to Firesphere 199";
 
-void SpecialInput(int key, int x, int y)
-{
-
-	switch (key)
-	{
-	case GLUT_KEY_LEFT:
-		InputManager::left();
-		break;
-	case GLUT_KEY_RIGHT:
-		InputManager::right();
-		break;
-	}
-}
-
+//Methods handling input from user
 void keySpecialUp(int key, int x, int y) {
 
 	switch (key)
@@ -56,9 +43,6 @@ void keyboardInput(unsigned char key, int x, int y)
 	if (key == 'r')
 		InputManager::Rotate();
 
-	if (key == 'c')
-		InputManager::switchCamera();
-
 	if (key == 'w')
 		InputManager::UpCamera();
 	if (key == 's')
@@ -75,6 +59,7 @@ void keyboardInput(unsigned char key, int x, int y)
 	return;
 }
 
+//main
 int main(int argc, char **argv)
 {
 	std::cout << helpMsg << std::endl;
@@ -84,6 +69,7 @@ int main(int argc, char **argv)
 		800, 600, //size
 		true);//reshape
 
+	//initialize
 	ContextInfo context(3, 3, true);
 	FramebufferInfo frameBufferInfo(true, true, true, true);
 	Init_GLUT::init(window, context, frameBufferInfo);
@@ -91,14 +77,15 @@ int main(int argc, char **argv)
 	IListener* scene = new Managers::Scene_Manager();
 	Init::Init_GLUT::setListener(scene);
 
+	//set input methods
 	InputManager* input = new InputManager();
-	glutSpecialFunc(SpecialInput);
 	glutMouseWheelFunc(mouseWheel);
 	glutKeyboardFunc(keyboardInput);
 	glutSpecialUpFunc(keySpecialUp);
 
 	srand(static_cast <unsigned> (time(0)));
 
+	//run it!
 	Init_GLUT::run();
 
 	delete scene;

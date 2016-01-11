@@ -2,6 +2,8 @@
 
 using namespace Managers;
 
+//stores shaders and models
+//its state is updated every frame
 Scene_Manager::Scene_Manager()
 {
 	glEnable(GL_DEPTH_TEST);

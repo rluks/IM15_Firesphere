@@ -4,6 +4,7 @@
 
 namespace Core
 {
+	//structure to store basic window parameters
 	struct WindowInfo
 	{
 		std::string name;
@@ -13,7 +14,7 @@ namespace Core
 
 		WindowInfo()
 		{
-			name = "PA199 3D Breakout";
+			name = "Firesphere";
 			width = 800; height = 600;
 			position_x = 300;
 			position_y = 300;
