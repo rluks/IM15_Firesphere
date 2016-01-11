@@ -20,6 +20,7 @@ class InputManager
 		static void zoomIn();
 		static void zoomOut();
 		static void Rotate();
+		static void Rotate(double dx, double dy);
 
 		static void UpCamera();
 		static void DownCamera();

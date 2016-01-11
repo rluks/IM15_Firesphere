@@ -1,6 +1,5 @@
 #version 330 core
 
-varying vec2 vUv;
 varying float noise;
 uniform sampler2D tex;
 

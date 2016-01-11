@@ -10,6 +10,9 @@ using namespace Init;
 std::string helpMsg = 
 "Welcome to Firesphere 199";
 
+int last_mx = 0, last_my = 0, cur_mx = 0, cur_my = 0;
+int arcball_on = false;
+
 //Methods handling input from user
 void keySpecialUp(int key, int x, int y) {
 
@@ -59,6 +62,30 @@ void keyboardInput(unsigned char key, int x, int y)
 	return;
 }
 
+//arcball implementation
+void onMouse(int button, int state, int x, int y) {
+	if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
+		arcball_on = true;
+		last_mx = cur_mx = x;
+		last_my = cur_my = y;
+	}
+	else {
+		arcball_on = false;
+	}
+}
+
+void onMotion(int x, int y) {
+	if (arcball_on) {  // if left button is pressed
+		cur_mx = x;
+		cur_my = y;
+	}
+	if (cur_mx != last_mx || cur_my != last_my) {
+		InputManager::Rotate((cur_mx - last_mx)*0.1f, (cur_my - last_my)*0.1f);
+		last_mx = cur_mx;
+		last_my = cur_my;
+	}
+}
+
 //main
 int main(int argc, char **argv)
 {
@@ -82,6 +109,9 @@ int main(int argc, char **argv)
 	glutMouseWheelFunc(mouseWheel);
 	glutKeyboardFunc(keyboardInput);
 	glutSpecialUpFunc(keySpecialUp);
+	glutMouseFunc(onMouse);
+	glutMotionFunc(onMotion);
+	
 
 	srand(static_cast <unsigned> (time(0)));
 

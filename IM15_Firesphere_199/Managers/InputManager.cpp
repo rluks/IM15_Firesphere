@@ -51,6 +51,12 @@ void InputManager::Rotate()
 	}
 }
 
+void InputManager::Rotate(double x, double y)
+{
+	Camera::Rotate(x, y);
+}
+
+
 void InputManager::UpCamera()
 {
 	Camera::Translate(0.5f, 0.0f, 0.0f);

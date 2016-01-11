@@ -14,6 +14,7 @@ public:
 	~Camera();
 	static void UpdateProjectionMatrix(float);
 	static void Rotate();
+	static void Rotate(double x, double y);
 	static void DisableRotate();
 
 	static void Translate(float height, float width, float depth);
@@ -34,8 +35,14 @@ public:
 	static float FoV;
 	static float FoVMin;
 	static float FoVMax;
-	static float RotateDelta;
+
 	static float RotateAngle;
+	static float RotateAngleX;
+	static float RotateAngleY;
+
+	static float RotateDelta;
+	static float RotateDeltaX;
+	static float RotateDeltaY;
 
 private:
 	static glm::vec3 center;
