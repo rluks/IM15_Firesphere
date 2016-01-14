@@ -41,10 +41,7 @@ void Camera::UpdateProjectionMatrix(float pFoV)
 
 void Camera::Update()
 {
-
-	RotateAngleX += RotateDeltaX;
-
-	RotateAngleY += RotateDeltaY;
+	
 
 	glm::vec3 selectedViewTemp = Camera::selectedView;
 	glm::vec3 centerTemp = center;
@@ -63,8 +60,15 @@ void Camera::Update()
 										800.0f / 600.0f, 
 										0.1f, 22.0f);
 
-	cameraMatrix = glm::rotate(cameraMatrix, glm::radians(RotateAngleX), glm::vec3(0.0f, 1.0f, 0.0f));
-	cameraMatrix = glm::rotate(cameraMatrix, glm::radians(RotateAngleY), glm::vec3(1.0f, 0.0f, 0.0f));
+		RotateAngle += RotateDelta;
+		cameraMatrix = glm::rotate(cameraMatrix, glm::radians(RotateAngle), glm::vec3(0.0f, 1.0f, 0.0f));
+
+		RotateAngleX += RotateDeltaX;
+		RotateAngleY += RotateDeltaY;
+
+		cameraMatrix = glm::rotate(cameraMatrix, glm::radians(RotateAngleX), glm::vec3(0.0f, 1.0f, 0.0f));
+		cameraMatrix = glm::rotate(cameraMatrix, glm::radians(RotateAngleY), glm::vec3(1.0f, 0.0f, 0.0f));
+
 
 }
 

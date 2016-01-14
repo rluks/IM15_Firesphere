@@ -124,9 +124,9 @@ uniform float time;
 
 //turbulence is used for puting few noises with different scale together 
 float turbulence( vec3 p ) {
-    float t = -.5;
+    float t = -0.5;
     for (float f = 1.0 ; f <= 10.0 ; f++ ){
-        float power = pow( 2, f );
+        float power = pow( 1.6, f );
         t += abs( cnoise( vec3( power * p )) / power);
     }
     return t;
@@ -135,11 +135,11 @@ float turbulence( vec3 p ) {
 void main() {
 
     // add time to the noise parameters so it's animated
-    noise = 10.0 *  -.10 * turbulence( .5 * vertNormal + time ); //high frequency noise
-    float b = 1000 * cnoise( 0.05 * in_position ); //low frequency noise
+    noise = 10.0 *  -.04 * turbulence(1 * vertNormal + time ); //high frequency noise
+    float b = 1000 * cnoise( 0.05 * in_position); //low frequency noise
     // compose both noises
-    float displacement = - noise + b;
-    
+    float displacement =  -noise - b;
+	   
     vec3 newPosition = in_position - vec3(0, 0, 1 ) + vertNormal * displacement; //creating new position with added displacement
     gl_Position = projection * camera * model * vec4(newPosition, 1.0);//w is 1.0
 

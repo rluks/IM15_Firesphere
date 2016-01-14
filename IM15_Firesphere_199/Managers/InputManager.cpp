@@ -86,3 +86,19 @@ void InputManager::BackwardCamera()
 {
 	Camera::Translate(0.0f, 0.0f, 0.5f);
 }
+
+void InputManager::DecreaseTimeDivider()
+{
+	Rendering::Models::Sphere::DecreaseTimeDivider();
+}
+
+
+void InputManager::IncreaseTimeDivider()
+{
+	Rendering::Models::Sphere::IncreaseTimeDivider();
+}
+
+void InputManager::ChangeTexture(int n)
+{
+	Rendering::Models::Sphere::ChangeTexture(n);
+}

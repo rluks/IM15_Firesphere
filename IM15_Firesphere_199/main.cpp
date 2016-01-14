@@ -59,6 +59,18 @@ void keyboardInput(unsigned char key, int x, int y)
 	if (key == 'v')
 		InputManager::BackwardCamera();
 
+	if (key == '+')
+		InputManager::DecreaseTimeDivider();
+	if (key == '-')
+		InputManager::IncreaseTimeDivider();
+
+	if (key == '1')
+		InputManager::ChangeTexture(1);
+	if (key == '2')
+		InputManager::ChangeTexture(2);
+	if (key == '3')
+		InputManager::ChangeTexture(3);
+		
 	return;
 }
 

@@ -3,7 +3,9 @@
 using namespace Rendering;
 using namespace Models;
 
-tdogl::Bitmap Model::ballTexture = tdogl::Bitmap::bitmapFromFile("Textures/explosion.png");
+tdogl::Bitmap Model::ballTexture = tdogl::Bitmap::bitmapFromFile("Textures/lava.png");
+tdogl::Bitmap Model::ballTexture2 = tdogl::Bitmap::bitmapFromFile("Textures/poison.png");
+tdogl::Bitmap Model::ballTexture3 = tdogl::Bitmap::bitmapFromFile("Textures/plasma.png");
 tdogl::Bitmap Model::spaceTexture = tdogl::Bitmap::bitmapFromFile("Textures/sky.png");
 
 Model::Model()
@@ -72,3 +74,8 @@ void Model::Destroy()
 	vbos.clear();
 }
 
+
+void ChangeTexture(int number)
+{
+
+}

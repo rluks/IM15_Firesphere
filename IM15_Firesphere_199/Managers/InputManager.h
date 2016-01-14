@@ -5,6 +5,7 @@
 
 #include "..\OpenGLIncludes.h"
 #include "..\Rendering\Models\Model.h"
+#include "..\Rendering\Models\Sphere.h"
 #include "..\Rendering\Camera.h"
 #include "..\Physics\Ball.h"
 
@@ -28,6 +29,11 @@ class InputManager
 		static void RightCamera();
 		static void ForwardCamera();
 		static void BackwardCamera();
+
+		static void DecreaseTimeDivider();
+		static void IncreaseTimeDivider();
+
+		static void ChangeTexture(int n);
 
 		static bool switchShaders;
 

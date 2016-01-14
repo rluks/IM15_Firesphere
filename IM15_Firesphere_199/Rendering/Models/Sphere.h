@@ -25,15 +25,28 @@ namespace Rendering
 			void Create();
 			virtual void Draw() override final;
 			virtual void Update() override final;
+
+			static void DecreaseTimeDivider();
+			static void IncreaseTimeDivider();
+
 			glm::vec3 spherePosition;
 			glm::mat4 identityMx;
 			glm::mat4 modelmx;
 			glm::mat4 rotated;
 			glm::mat4 scaledMx;
+			
+			static void ChangeTexture(int n);
 
 			void SetTexture(tdogl::Bitmap bmp);//ballTexture is set implicitly
 			float scale;//size of the sphere
 			float rotationIncrement;
+
+			enum textures; 
+
+			static int currentTexture;
+			
+			static int timeDividerChanger;
+			double timeDivider;
 		};
 	}
 }

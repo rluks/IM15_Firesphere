@@ -9,6 +9,12 @@ std::vector<GLushort> indices;
 //std::vector<GLfloat> normals;
 GLuint ibo;//Index Buffer Object for indices
 
+int Sphere::timeDividerChanger = 0;
+
+enum textures { LAVA = 1, POISON, PLASMA };
+
+int Sphere::currentTexture = LAVA;
+
 Sphere::Sphere()
 {
 	dxR = 0.0f;
@@ -42,8 +48,8 @@ void Sphere::Create()
 	glm::vec4 blue = glm::vec4(0, 0, 1, 1);
 
 	int n = 12;//fidelity (level of detail of sphere)
-	unsigned int rings = 12*n;
-	unsigned int sectors = 24*n;
+	unsigned int rings = 12 * n;
+	unsigned int sectors = 24 * n;
 
 	float const R = 1.0f / (float)(rings - 1);
 	float const S = 1.0f / (float)(sectors - 1);
@@ -82,7 +88,7 @@ void Sphere::Create()
 			*i++ = r * sectors + s;
 		}
 	}
-	
+
 	verticesSize = vertices.size();
 
 	glGenBuffers(1, &vbo);
@@ -111,10 +117,12 @@ void Sphere::Create()
 	this->vao = vao;
 	this->vbos.push_back(vbo);
 
+	timeDivider = 0.1;
 }
 
 void Sphere::Update()
 {
+
 	dxR += rotationIncrement;
 	if (dxR > 360.0f)
 		dxR = 0.0f;
@@ -127,29 +135,53 @@ void Sphere::Update()
 
 	cameraMatrixCopy = Camera::cameraMatrix;
 
+
+	if (Sphere::timeDividerChanger < 0)
+	{
+		timeDivider *= (10.0 / 8.0);
+	}
+	else if (Sphere::timeDividerChanger > 0)
+	{
+		timeDivider *= 0.8;
+	}
+	Sphere::timeDividerChanger = 0;
 }
 
-void Sphere::SetTexture(tdogl::Bitmap bmp)
+
+
+void Sphere::SetTexture(tdogl::Bitmap bmp) 
 {
 	gTexture = new tdogl::Texture(bmp);
 }
 
 void Sphere::Draw()
 {
-	glUseProgram(program);	
+	glUseProgram(program);
 
 	glUniformMatrix4fv(camera, 1, GL_FALSE, glm::value_ptr(cameraMatrixCopy));
 	glUniformMatrix4fv(projection, 1, GL_FALSE, glm::value_ptr(Camera::projectionMatrix));
 	glUniformMatrix4fv(model, 1, GL_FALSE, glm::value_ptr(scaledMx));
 
-	double timediff = (TimeManager::GetTime() - start) / 10;
-	//timediff = 1;
-	glUniform1f(glGetUniformLocation(program, "time"), timediff);//
+	double timediff = (TimeManager::GetTime() - start) * timeDivider;
+
+	glUniform1f(glGetUniformLocation(program, "time"), timediff);
 
 	//glDisable(GL_CULL_FACE);
 	glm::vec3 lightPos = glm::vec3(Ball::position.x + 7, Ball::position.y + 7, Ball::position.z);
 	glUniform3fv(lightPosition, 1, glm::value_ptr(lightPos));
 	glUniform3fv(lightColor, 1, glm::value_ptr(Camera::myLightColor));
+
+	switch (currentTexture) {
+	case LAVA:
+		gTexture = new tdogl::Texture(Model::ballTexture);
+		break;
+	case POISON:
+		gTexture = new tdogl::Texture(Model::ballTexture2);
+		break;
+	case PLASMA:
+		gTexture = new tdogl::Texture(Model::ballTexture3);
+		break;
+	}
 
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, gTexture->object());
@@ -162,7 +194,7 @@ void Sphere::Draw()
 	check_gl_error();
 
 	/*
-	// offset the wireframe 
+	// offset the wireframe
 	glEnable(GL_POLYGON_OFFSET_LINE);
 	glPolygonOffset(-5, -5);
 
@@ -176,3 +208,22 @@ void Sphere::Draw()
 	*/
 
 }
+
+
+void Sphere::DecreaseTimeDivider()
+{
+	Sphere::timeDividerChanger = -1;
+}
+
+void Sphere::IncreaseTimeDivider()
+{
+	Sphere::timeDividerChanger = 1;
+}
+
+
+void Sphere::ChangeTexture(int n)
+{
+	Sphere::currentTexture = n;
+}
+
+
