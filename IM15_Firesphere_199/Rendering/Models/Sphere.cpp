@@ -16,11 +16,11 @@ double Sphere::height = 0.08;
 int Sphere::sign = 1;
 
 
-enum textures { LAVA = 1, POISON, PLASMA };
+enum textures { SPACE = 0, LAVA = 1, POISON, PLASMA };
 
 Sphere::Sphere()
 {
-	currentTexture = LAVA;
+	//currentTexture = LAVA;
 
 	dxR = 0.0f;
 	spherePosition = glm::vec3(0, 0, 0);

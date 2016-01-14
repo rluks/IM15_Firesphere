@@ -10,6 +10,7 @@ Models_Manager::Models_Manager()
 	Models::Sphere* sphere = new Models::Sphere();
 	sphere->SetProgram(Shader_Manager::GetShader("textureShader"));
 	sphere->Create();
+	sphere->currentTexture = 1;
 	gameModelList["fireball"] = sphere;
 
 	//the skybox
@@ -17,6 +18,7 @@ Models_Manager::Models_Manager()
 	sphereSky->SetProgram(Shader_Manager::GetShader("spaceShader"));
 	sphereSky->Create();
 	sphereSky->SetTexture(Models::Model::spaceTexture);
+	sphere->currentTexture = 0;
 	sphereSky->scale = 13.2f;
 	sphereSky->rotationIncrement = 0.0025f;
 	gameModelList["sky"] = sphereSky;
