@@ -6,6 +6,9 @@
 
 using namespace Core;
 using namespace Init;
+using namespace Managers;
+
+IListener* scene;
 
 std::string helpMsg = 
 "Welcome to Firesphere 199";
@@ -66,11 +69,11 @@ void keyboardInput(unsigned char key, int x, int y)
 		InputManager::BackwardCamera();
 
 	if (key == '1')
-		InputManager::ChangeTexture(1);
+		InputManager::ChangeTexture(1, scene);
 	if (key == '2')
-		InputManager::ChangeTexture(2);
+		InputManager::ChangeTexture(2, scene);
 	if (key == '3')
-		InputManager::ChangeTexture(3);
+		InputManager::ChangeTexture(3, scene);
 
 	if(key == 'i')
 		InputManager::InverseNoise();
@@ -169,7 +172,7 @@ int main(int argc, char **argv)
 	FramebufferInfo frameBufferInfo(true, true, true, true);
 	Init_GLUT::init(window, context, frameBufferInfo);
 
-	IListener* scene = new Managers::Scene_Manager();
+	scene = new Managers::Scene_Manager();
 	Init::Init_GLUT::setListener(scene);
 
 	//set input methods

@@ -7,9 +7,6 @@
 #include "../Rendering/IGameObject.h"
 #include "../Rendering/Models/Sphere.h"
 #include "../Rendering/Models/Circle.h"
-
-#include "InputManager.h"
-
 #include "../Rendering/Models/Model.h"
 
 using namespace Rendering;
@@ -27,6 +24,8 @@ namespace Managers
 
 			void DeleteModel(const std::string& gameModelName);
 			const IGameObject& GetModel(const std::string& gameModelName) const;
+
+			void ChangeTexture(int n);
 
 		private:
 			std::map<std::string, IGameObject*> gameModelList;

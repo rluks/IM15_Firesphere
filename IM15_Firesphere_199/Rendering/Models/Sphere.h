@@ -32,7 +32,7 @@ namespace Rendering
 			glm::mat4 rotated;
 			glm::mat4 scaledMx;
 			
-			static void ChangeTexture(int n);
+			void ChangeTexture(int n);
 			static void ChangeThickness(int n);
 			static void ChangeHeight(int n);
 			static void ChangeFrequency(int n);
@@ -44,7 +44,7 @@ namespace Rendering
 			float rotationIncrement;
 
 			enum textures; 
-			static int currentTexture;
+			int currentTexture;
 			static int sign;
 
 			static double timeDivider;

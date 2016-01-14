@@ -18,10 +18,10 @@ int Sphere::sign = 1;
 
 enum textures { LAVA = 1, POISON, PLASMA };
 
-int Sphere::currentTexture = LAVA;
-
 Sphere::Sphere()
 {
+	currentTexture = LAVA;
+
 	dxR = 0.0f;
 	spherePosition = glm::vec3(0, 0, 0);
 

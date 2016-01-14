@@ -1,5 +1,6 @@
 #include "InputManager.h"
 
+using namespace Managers;
 
 bool InputManager::switchShaders = false;
 bool InputManager::rotate = false;
@@ -93,9 +94,11 @@ void InputManager::ChangeTimeDivider(int n)
 	Rendering::Models::Sphere::ChangeTimeDivider(n);
 }
 
-void InputManager::ChangeTexture(int n)
+void InputManager::ChangeTexture(int n, Core::IListener*& iListener)
 {
-	Rendering::Models::Sphere::ChangeTexture(n);
+	Scene_Manager* scene = dynamic_cast<Scene_Manager*>(iListener);
+	scene->ChangeTexture(n);
+	//Rendering::Models::Sphere::ChangeTexture(n);
 }
 
 

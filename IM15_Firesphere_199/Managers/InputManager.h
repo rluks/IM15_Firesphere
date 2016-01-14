@@ -9,8 +9,13 @@
 #include "..\Rendering\Camera.h"
 #include "..\Physics\Ball.h"
 
+#include "..\Core\Init\IListener.h"
+#include "..\Managers\Scene_Manager.h"
+
 using namespace std;
 
+namespace Managers
+{
 class InputManager
 {
 	public:
@@ -33,7 +38,7 @@ class InputManager
 		static void InverseNoise();
 
 		static void ChangeTimeDivider(int n);
-		static void ChangeTexture(int n);
+		static void ChangeTexture(int n, Core::IListener*& iListener);
 		static void ChangeFrequency(int n);
 		static void ChangeHeight(int n);
 		static void ChangeThickness(int n);
@@ -55,3 +60,4 @@ class InputManager
 
 		static bool rotate;
 };
+}

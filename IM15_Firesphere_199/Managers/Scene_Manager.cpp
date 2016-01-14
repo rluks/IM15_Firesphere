@@ -64,3 +64,8 @@ void Scene_Manager::notifyReshape(int width,
 	//nothing here for the moment 
 
 }
+
+void Scene_Manager::ChangeTexture(int n)
+{
+	models_manager->ChangeTexture(n);
+}
