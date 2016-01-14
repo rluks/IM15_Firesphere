@@ -9,7 +9,12 @@ std::vector<GLushort> indices;
 //std::vector<GLfloat> normals;
 GLuint ibo;//Index Buffer Object for indices
 
-int Sphere::timeDividerChanger = 0;
+double Sphere::thickness = 2.0;
+double Sphere::timeDivider = 0.1;
+double Sphere::freq = 0.5;
+double Sphere::height = 0.08;
+int Sphere::sign = 1;
+
 
 enum textures { LAVA = 1, POISON, PLASMA };
 
@@ -116,8 +121,6 @@ void Sphere::Create()
 
 	this->vao = vao;
 	this->vbos.push_back(vbo);
-
-	timeDivider = 0.1;
 }
 
 void Sphere::Update()
@@ -135,21 +138,11 @@ void Sphere::Update()
 
 	cameraMatrixCopy = Camera::cameraMatrix;
 
-
-	if (Sphere::timeDividerChanger < 0)
-	{
-		timeDivider *= (10.0 / 8.0);
-	}
-	else if (Sphere::timeDividerChanger > 0)
-	{
-		timeDivider *= 0.8;
-	}
-	Sphere::timeDividerChanger = 0;
 }
 
 
 
-void Sphere::SetTexture(tdogl::Bitmap bmp) 
+void Sphere::SetTexture(tdogl::Bitmap bmp)
 {
 	gTexture = new tdogl::Texture(bmp);
 }
@@ -162,7 +155,7 @@ void Sphere::Draw()
 	glUniformMatrix4fv(projection, 1, GL_FALSE, glm::value_ptr(Camera::projectionMatrix));
 	glUniformMatrix4fv(model, 1, GL_FALSE, glm::value_ptr(scaledMx));
 
-	double timediff = (TimeManager::GetTime() - start) * timeDivider;
+	double timediff = (TimeManager::GetTime() - start) * Sphere::timeDivider;
 
 	glUniform1f(glGetUniformLocation(program, "time"), timediff);
 
@@ -170,6 +163,11 @@ void Sphere::Draw()
 	glm::vec3 lightPos = glm::vec3(Ball::position.x + 7, Ball::position.y + 7, Ball::position.z);
 	glUniform3fv(lightPosition, 1, glm::value_ptr(lightPos));
 	glUniform3fv(lightColor, 1, glm::value_ptr(Camera::myLightColor));
+
+	glUniform1f(glGetUniformLocation(program, "thickness"), Sphere::thickness);
+	glUniform1f(glGetUniformLocation(program, "freq"), Sphere::freq);
+	glUniform1f(glGetUniformLocation(program, "sign"), Sphere::sign);
+	glUniform1f(glGetUniformLocation(program, "height"), Sphere::height);
 
 	switch (currentTexture) {
 	case LAVA:
@@ -209,15 +207,12 @@ void Sphere::Draw()
 
 }
 
-
-void Sphere::DecreaseTimeDivider()
+void Sphere::ChangeTimeDivider(int n)
 {
-	Sphere::timeDividerChanger = -1;
-}
-
-void Sphere::IncreaseTimeDivider()
-{
-	Sphere::timeDividerChanger = 1;
+	if (n > 0)
+		Sphere::timeDivider *= (10.0 / 8.0);
+	else if (n < 0)
+		Sphere::timeDivider *= 0.8;
 }
 
 
@@ -226,4 +221,32 @@ void Sphere::ChangeTexture(int n)
 	Sphere::currentTexture = n;
 }
 
+void Sphere::ChangeFrequency(int n)
+{
+	if (n > 0)
+		Sphere::freq += 0.1;
+	else if (n < 0)
+		Sphere::freq -= 0.1;
+}
+
+void Sphere::ChangeThickness(int n)
+{
+	if (n > 0)
+		Sphere::thickness += 0.1;
+	else if (n < 0)
+		Sphere::thickness -= 0.1;
+}
+
+void Sphere::ChangeHeight(int n)
+{
+	if (n > 0)
+		Sphere::height += 0.01;
+	else if (n < 0)
+		Sphere::height -= 0.01;
+}
+
+void Sphere::InverseNoise()
+{
+	Sphere:sign *= -1;
+}
 

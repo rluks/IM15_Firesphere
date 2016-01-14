@@ -30,10 +30,13 @@ class InputManager
 		static void ForwardCamera();
 		static void BackwardCamera();
 
-		static void DecreaseTimeDivider();
-		static void IncreaseTimeDivider();
+		static void InverseNoise();
 
+		static void ChangeTimeDivider(int n);
 		static void ChangeTexture(int n);
+		static void ChangeFrequency(int n);
+		static void ChangeHeight(int n);
+		static void ChangeThickness(int n);
 
 		static bool switchShaders;
 

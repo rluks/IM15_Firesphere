@@ -26,9 +26,6 @@ namespace Rendering
 			virtual void Draw() override final;
 			virtual void Update() override final;
 
-			static void DecreaseTimeDivider();
-			static void IncreaseTimeDivider();
-
 			glm::vec3 spherePosition;
 			glm::mat4 identityMx;
 			glm::mat4 modelmx;
@@ -36,17 +33,24 @@ namespace Rendering
 			glm::mat4 scaledMx;
 			
 			static void ChangeTexture(int n);
+			static void ChangeThickness(int n);
+			static void ChangeHeight(int n);
+			static void ChangeFrequency(int n);
+			static void ChangeTimeDivider(int n); 
+			static void InverseNoise();
 
 			void SetTexture(tdogl::Bitmap bmp);//ballTexture is set implicitly
 			float scale;//size of the sphere
 			float rotationIncrement;
 
 			enum textures; 
-
 			static int currentTexture;
-			
-			static int timeDividerChanger;
-			double timeDivider;
+			static int sign;
+
+			static double timeDivider;
+			static double thickness;
+			static double freq;
+			static double height;
 		};
 	}
 }

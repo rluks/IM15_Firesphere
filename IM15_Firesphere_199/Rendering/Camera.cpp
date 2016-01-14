@@ -34,7 +34,7 @@ Camera::~Camera(){}
 
 void Camera::UpdateProjectionMatrix(float pFoV)
 {
-	std::cout << FoV << " pfov:" << pFoV << std::endl;
+	//std::cout << FoV << " pfov:" << pFoV << std::endl;
 	if(FoV > FoVMin && pFoV < 0.0f || FoV < FoVMax && pFoV > 0.0f)
 		FoV += pFoV;
 }

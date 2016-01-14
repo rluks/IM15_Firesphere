@@ -87,18 +87,36 @@ void InputManager::BackwardCamera()
 	Camera::Translate(0.0f, 0.0f, 0.5f);
 }
 
-void InputManager::DecreaseTimeDivider()
-{
-	Rendering::Models::Sphere::DecreaseTimeDivider();
-}
 
-
-void InputManager::IncreaseTimeDivider()
+void InputManager::ChangeTimeDivider(int n)
 {
-	Rendering::Models::Sphere::IncreaseTimeDivider();
+	Rendering::Models::Sphere::ChangeTimeDivider(n);
 }
 
 void InputManager::ChangeTexture(int n)
 {
 	Rendering::Models::Sphere::ChangeTexture(n);
 }
+
+
+void InputManager::ChangeFrequency(int n)
+{
+	Rendering::Models::Sphere::ChangeFrequency(n);
+}
+
+void InputManager::ChangeHeight(int n)
+{
+	Rendering::Models::Sphere::ChangeHeight(n);
+}
+
+void InputManager::ChangeThickness(int n)
+{
+	Rendering::Models::Sphere::ChangeThickness(n);
+
+}
+
+void InputManager::InverseNoise()
+{
+	Rendering::Models::Sphere::InverseNoise();
+}
+
