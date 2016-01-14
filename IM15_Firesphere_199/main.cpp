@@ -123,34 +123,34 @@ void PrintInstruction()
 	std::cout << "***************************************************" << std::endl;
 	std::cout << "KEYBOARD INPUT:" << std::endl;
 
-	std::cout << "[Right_Arrow_key]: To increase speed." << std::endl << std::endl;
-	std::cout << "[Left_Arrow_key]: To decrease speed." << std::endl << std::endl;
-	std::cout << "[Up_Arrow_key]: To increase height of disturbance." << std::endl << std::endl;
-	std::cout << "[Down_Arrow_key]: To decrease height of disturbance." << std::endl << std::endl;
+	std::cout << "[Right_Arrow_key]: To increase speed." << std::endl;
+	std::cout << "[Left_Arrow_key]: To decrease speed." << std::endl;
+	std::cout << "[Up_Arrow_key]: To increase height of disturbance." << std::endl;
+	std::cout << "[Down_Arrow_key]: To decrease height of disturbance." << std::endl;
 
-	std::cout << "[+]: To increase the noise's frequency." << std::endl << std::endl;
-	std::cout << "[-]: To decrease the noise's frequency." << std::endl << std::endl;
+	std::cout << "[+]: To increase the noise's frequency." << std::endl;
+	std::cout << "[-]: To decrease the noise's frequency." << std::endl;
 
 
-	std::cout << "[>]: To increase the noise's density." << std::endl << std::endl;
-	std::cout << "[<]: To decrease the noise's density." << std::endl << std::endl;
+	std::cout << "[>]: To increase the noise's density." << std::endl;
+	std::cout << "[<]: To decrease the noise's density." << std::endl;
 
-	std::cout << "[1]: To change texture to LAVA." << std::endl << std::endl;
-	std::cout << "[2]: To change texture to POISON." << std::endl << std::endl;
-	std::cout << "[3]: To change texture to PLASMA." << std::endl << std::endl;
+	std::cout << "[1]: To change texture to LAVA." << std::endl;
+	std::cout << "[2]: To change texture to POISON." << std::endl;
+	std::cout << "[3]: To change texture to PLASMA." << std::endl;
 
-	std::cout << "[R]: To enable rotation." << std::endl << std::endl;
-	std::cout << "[W]: To move camera up." << std::endl << std::endl;
-	std::cout << "[S]: To move camera down." << std::endl << std::endl;
-	std::cout << "[A]: To move camera to the left." << std::endl << std::endl;
-	std::cout << "[D]: To move camera to the right." << std::endl << std::endl;
-	std::cout << "[F]: To move camera forward." << std::endl << std::endl;
-	std::cout << "[B]: To move camera backward." << std::endl << std::endl;
-	std::cout << "[I]: Inverse the noise." << std::endl << std::endl;
+	std::cout << "[R]: To enable rotation." << std::endl;
+	std::cout << "[W]: To move camera up." << std::endl;
+	std::cout << "[S]: To move camera down." << std::endl;
+	std::cout << "[A]: To move camera to the left." << std::endl;
+	std::cout << "[D]: To move camera to the right." << std::endl;
+	std::cout << "[F]: To move camera forward." << std::endl;
+	std::cout << "[B]: To move camera backward." << std::endl;
+	std::cout << "[I]: Inverse the noise." << std::endl;
 
 	std::cout << "MOUSE INPUT:" << std::endl;
-	std::cout << "Mouse scroll: To zoom in and out." << std::endl << std::endl;
-	std::cout << "Left Mouse Button + movement: camera movement." << std::endl << std::endl;
+	std::cout << "Mouse scroll: To zoom in and out." << std::endl;
+	std::cout << "Left Mouse Button + movement: camera movement." << std::endl;
 
 	std::cout << "***************************************************";
 	std::cout << std::endl << std::endl;

@@ -74,6 +74,4 @@ void Models_Manager::ChangeTexture(int n)
 	Models::Sphere* sphere = dynamic_cast<Models::Sphere*>(gameModelList["fireball"]);
 	sphere->currentTexture = n;
 	gameModelList["fireball"] = sphere;
-
-	std::cout << "tex:" << n << std::endl;
 }
