@@ -18,7 +18,7 @@ public:
 	~Camera();
 	static void UpdateProjectionMatrix(float);
 	static void Rotate();
-	static void Rotate(double x, double y);
+	static void Rotate(float x, float y);
 	static void DisableRotate();
 
 	static void Translate(float height, float width, float depth);

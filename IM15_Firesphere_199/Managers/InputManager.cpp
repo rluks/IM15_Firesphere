@@ -36,7 +36,7 @@ void InputManager::Rotate()
 	}
 }
 
-void InputManager::Rotate(double x, double y)
+void InputManager::Rotate(float x, float y)
 {
 	Camera::Rotate(x, y);
 }

@@ -77,7 +77,7 @@ void Camera::Rotate()
 	RotateDelta = 1.0f;
 }
 
-void Camera::Rotate(double x, double y)
+void Camera::Rotate(float x, float y)
 {
 	RotateDeltaX = x;
 	RotateDeltaY = y;
