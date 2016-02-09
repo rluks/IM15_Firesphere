@@ -1,5 +1,7 @@
 #include "TimeManager.h"
 
+#include <iostream>
+
 //Time manager for showing fps
 //copy-pasted from stackoverflow
 
@@ -59,7 +61,7 @@ double TimeManager::CalculateFrameRate()
 
 		// Show the frames per second in the console window if desired
 		if (writeToConsole)
-			fprintf(stderr, "Current Frames Per Second: %d\n", int(framesPerSecond));
+			std::cerr << "Current Frames Per Second: %d\n" << int(framesPerSecond) << std::endl;
 
 		// Store the current FPS since we reset it down below and need to store it to return it
 		currentFPS = framesPerSecond;

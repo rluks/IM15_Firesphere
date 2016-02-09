@@ -6,7 +6,7 @@
 
 #include "../Rendering/IGameObject.h"
 #include "../Rendering/Models/Sphere.h"
-#include "../Rendering/Models/Circle.h"
+//#include "../Rendering/Models/Circle.h"
 #include "../Rendering/Models/Model.h"
 
 using namespace Rendering;

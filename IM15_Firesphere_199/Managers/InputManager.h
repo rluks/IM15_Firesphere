@@ -1,6 +1,6 @@
 ﻿#pragma once
 
-#include <windows.h>
+//#include <windows.h>
 #include <iostream>
 
 #include "..\OpenGLIncludes.h"
@@ -46,13 +46,6 @@ class InputManager
 		static bool switchShaders;
 
 	private:
-		HANDLE hIn;
-		HANDLE hOut;
-		COORD KeyWhere;
-		COORD MouseWhere;
-		COORD EndWhere;
-		INPUT_RECORD InRec;
-		DWORD NumRead;
 
 		bool Continue;
 		int KeyEvents;

@@ -102,5 +102,6 @@ const GLuint Shader_Manager::GetShader(const std::string& shaderName)
 	else
 	{
 		std::cerr << "error: could not find shader " << shaderName.c_str() << std::endl;
+		return -1;
 	}
 }

@@ -1,5 +1,6 @@
 #pragma once
-#include "glm\glm.hpp" //installed with NuGet
+//#include "glm\glm.hpp" //installed with NuGet
+#include "..\..\packages\glm.0.9.6.3\build\native\include\glm\glm.hpp"
 
 namespace Rendering
 {

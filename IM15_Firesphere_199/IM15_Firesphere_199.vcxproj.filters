@@ -26,9 +26,6 @@
     <ClCompile Include="Physics\Ball.cpp">
       <Filter>Physics</Filter>
     </ClCompile>
-    <ClCompile Include="Rendering\Models\Circle.cpp">
-      <Filter>Rendering\Models</Filter>
-    </ClCompile>
     <ClCompile Include="Rendering\Models\Models.cpp">
       <Filter>Rendering\Models</Filter>
     </ClCompile>
@@ -84,9 +81,6 @@
     <ClInclude Include="Physics\Ball.h">
       <Filter>Physics</Filter>
     </ClInclude>
-    <ClInclude Include="Rendering\Models\Circle.h">
-      <Filter>Rendering\Models</Filter>
-    </ClInclude>
     <ClInclude Include="Rendering\Models\Model.h">
       <Filter>Rendering\Models</Filter>
     </ClInclude>
@@ -112,6 +106,8 @@
       <Filter>Rendering</Filter>
     </ClInclude>
     <ClInclude Include="GLError.h" />
+    <ClInclude Include="myglm.h" />
+    <ClInclude Include="main.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

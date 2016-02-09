@@ -4,8 +4,8 @@
 #include <string>
 #include <iomanip>
 
-#include <glm/glm.hpp>
-#include <glm/gtc/type_ptr.hpp>
+#include "..\myglm.h"
+
 #include "..\Managers\TimeManager.h"
 
 class Ball

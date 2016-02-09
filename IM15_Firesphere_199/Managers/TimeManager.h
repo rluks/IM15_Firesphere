@@ -7,7 +7,7 @@ class TimeManager
 {
 public:
 	// This returns the current time in seconds (since 1/1/1970, call "epoch")
-	static double TimeManager::GetTime();
+	static double GetTime();
 
 	// This calculates our current scene's frames per second and displays it in the console
 	static double CalculateFrameRate();

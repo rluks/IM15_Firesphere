@@ -79,7 +79,6 @@
     <ClCompile Include="Managers\Scene_Manager.cpp" />
     <ClCompile Include="Managers\Shader_Manager.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Rendering\Models\Circle.cpp" />
     <ClCompile Include="Rendering\Models\Models.cpp" />
     <ClCompile Include="Rendering\Models\Sphere.cpp" />
     <ClCompile Include="Rendering\tdogl\Bitmap.cpp" />
@@ -98,7 +97,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GLError.h" />
+    <ClInclude Include="main.h" />
     <ClInclude Include="Managers\TimeManager.h" />
+    <ClInclude Include="myglm.h" />
     <ClInclude Include="Physics\Ball.h" />
     <ClInclude Include="Rendering\Camera.h" />
     <ClInclude Include="Core\Init\ContextInfo.h" />
@@ -112,7 +113,6 @@
     <ClInclude Include="Core\Init\Init_GLEW.h" />
     <ClInclude Include="Managers\Shader_Manager.h" />
     <ClInclude Include="Rendering\IGameObject.h" />
-    <ClInclude Include="Rendering\Models\Circle.h" />
     <ClInclude Include="Rendering\Models\Model.h" />
     <ClInclude Include="Rendering\Models\Sphere.h" />
     <ClInclude Include="OpenGLIncludes.h" />

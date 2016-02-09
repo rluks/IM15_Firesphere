@@ -2,9 +2,7 @@
 
 #include "Model.h"
 
-#include <glm/glm.hpp>
-#include <glm/gtc/type_ptr.hpp>
-#include <glm/gtc/matrix_transform.hpp>
+#include "..\..\myglm.h"
 
 #include <cmath>
 
@@ -43,7 +41,7 @@ namespace Rendering
 			float scale;//size of the sphere
 			float rotationIncrement;
 
-			enum textures; 
+			//enum textures; 
 			int currentTexture;
 			static int sign;
 

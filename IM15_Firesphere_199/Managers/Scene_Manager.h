@@ -1,6 +1,7 @@
 #pragma once
 
-#include <glm/gtc/matrix_transform.hpp>
+//#include <glm/gtc/matrix_transform.hpp>
+#include "..\..\packages\glm.0.9.6.3\build\native\include\glm\gtc\matrix_transform.hpp"
 
 #include "Shader_Manager.h"
 #include "Models_Manager.h"
